@@ -1,7 +1,10 @@
 package the_fireplace.ias;
 
+import org.unixminecraft.ias.commands.AddAccountCommand;
+
 import com.github.mrebhan.ingameaccountswitcher.MR;
 import net.minecraft.client.resources.I18n;
+import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
@@ -52,5 +55,6 @@ public class IAS {
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event){
 		SkinTools.cacheSkins();
+		ClientCommandHandler.instance.registerCommand(new AddAccountCommand());
 	}
 }
